@@ -1,17 +1,20 @@
 function buscar_aluno(){
     
-    let nome_do_aluno = document.getElementById("aluno")
+    let nome_do_aluno = document.getElementById("nome_do_aluno").value
 
-    if(aluno){
+    if(nome_do_aluno){
         
-        ocument.getElementById("id_do_aluno").value = Math.floor(Date.now() * Math.random()).toString(36)
+        document.getElementById("id_do_aluno").value = Math.floor(Date.now() * Math.random()).toString(36)
 
         min = 1000000
         max = 9999999
 
         document.getElementById("matricula_do_aluno").value = Math.floor(Math.random() * (max - min + 1)) + min
+
     }else{
-        alert("Insira o nome do aluno")
+        
+        alert("Insira o nome do(a) aluno(a)")
+    
     }
 }
 
@@ -384,7 +387,8 @@ function avaliar_aluno(){
     
     let nome_do_aluno = document.getElementById("nome_do_aluno").value
 
-   /* NOTA */
+   if(nome_do_aluno){
+    /* NOTA */
 
    let nota1 = Number(document.getElementById("matematica_nota").value)
 
@@ -442,4 +446,7 @@ function avaliar_aluno(){
     else{
         alert(`A nota do aluno ${nome_do_aluno} é de ${media_do_aluno}% e sua presença é ${media_de_presenca_do_aluno}%: Aluno Reprovado!`)
     }
+   }else{
+    alert("Nome do(a) aluno(a) invalido")
+   }
 }
